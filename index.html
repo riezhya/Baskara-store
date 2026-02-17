@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TokoKu - Premium Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+        body {
+            background: #000;
+            color: #fff;
+        }
+
+        header {
+            padding: 90px 20px;
+            text-align: center;
+            border-bottom: 1px solid #111;
+            background: radial-gradient(circle at top, rgba(124,58,237,0.08), transparent 65%);
+        }
+
+        header h1 {
+            font-size: 2.6rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #ffffff, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            color: #aaa;
+            font-size: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 28px;
+            background: linear-gradient(90deg, #7c3aed, #a855f7);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: 0.3s ease;
+            box-shadow: 0 0 12px rgba(168,85,247,0.25);
+        }
+
+        .btn:hover {
+            box-shadow: 0 0 18px rgba(168,85,247,0.35);
+        }
+
+        section {
+            padding: 90px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 1.8rem;
+            font-weight: 500;
+            background: linear-gradient(90deg, #ffffff, #93c5fd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .products, .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 35px;
+        }
+
+        .card-link { text-decoration: none; color: inherit; }
+
+        .card {
+            background: linear-gradient(145deg, #0a0a0a, #111);
+            padding: 40px;
+            border-radius: 14px;
+            border: 1px solid #1a1a1a;
+            transition: 0.3s ease;
+            text-align: center;
+        }
+
+        .card:hover {
+            border-color: #7c3aed;
+            box-shadow: 0 0 15px rgba(124,58,237,0.15);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .price {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #c084fc;
+        }
+
+        .discord-note {
+            font-size: 0.85rem;
+            color: #93c5fd;
+            margin-top: 15px;
+        }
+
+        .stats-box {
+            background: linear-gradient(145deg, #0a0a0a, #111);
+            padding: 60px;
+            border-radius: 14px;
+            border: 1px solid #1a1a1a;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(147,197,253,0.08);
+        }
+
+        .stats-number {
+            font-size: 2.8rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #c084fc, #93c5fd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stars {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #facc15;
+        }
+
+        .testimonial-grid .card p {
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            border-top: 1px solid #111;
+            color: #666;
+            font-size: 0.9rem;
+            background: radial-gradient(circle at bottom, rgba(168,85,247,0.08), transparent 65%);
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Baskara Store</h1>
+    <p>Menyediakan Redeem code Redfinger dan Kebutuhan ROBLOX lainya.</p>
+    <a href="#produk" class="btn">Lihat Produk</a>
+</header>
+
+<section id="produk">
+    <h2>Produk</h2>
+    <div class="products">
+
+        <a href="https://discord.gg/vuNdgndwrN" target="_blank" class="card-link">
+            <div class="card">
+                <h3>REDFINGER</h3>
+                <p class="price">Harga Mulai Rp.15.100</p>
+                <p>REDFINGER VIA KODE REDEEM ALL SERVER DAN ANDROID.</p>
+                <p class="discord-note">Klik untuk Order via Discord</p>
+            </div>
+        </a>
+
+        <a href="https://discord.gg/vuNdgndwrN" target="_blank" class="card-link">
+            <div class="card">
+                <h3>KEBUTUHAN ROBLOX</h3>               
+                <p>Produk unggulan dengan pelayanan cepat.</p>
+                <p class="discord-note">Klik untuk Order via Discord</p>
+            </div>
+        </a>
+
+    </div>
+</section>
+
+<section>
+    <h2>Total Terjual</h2>
+    <div class="stats-box">
+        <div class="stats-number">30.000+</div>
+        <p style="color:#888;">Total produk yang sudah terjual</p>
+    </div>
+</section>
+
+<section>
+    <h2>Customer Reviews</h2>
+    <div class="testimonial-grid">
+        <div class="card">
+            <div class="stars">★★★★★</div>
+            <p><strong>Andi</strong></p>
+            <p>Recommended!</p>
+        </div>
+        <div class="card">
+            <div class="stars">★★★★★</div>
+            <p><strong>Sinta</strong></p>
+            <p>Murah banget.</p>
+        </div>
+        <div class="card">
+            <div class="stars">★★★★★</div>
+            <p><strong>Agi</strong></p>
+            <p>Pelayanan Cepat dan Ramah.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 BaskaraStore. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
