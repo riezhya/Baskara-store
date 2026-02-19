@@ -3,228 +3,204 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Baskara Store - Premium Digital Store</title>
+<title>Baskara Store | Premium Digital Marketplace</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
-    --primary:#7c3aed;
-    --secondary:#a855f7;
-    --accent:#93c5fd;
-    --dark:#000;
-    --card:#0f0f0f;
+  --bg:#0b0b0b;
+  --card:#111111;
+  --border:#1f1f1f;
+  --primary:#ffffff;
+  --accent:#a855f7;
+  --muted:#9ca3af;
 }
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-    scroll-behavior:smooth;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+  scroll-behavior:smooth;
 }
 
 body{
-    background:#000;
-    color:#fff;
-    overflow-x:hidden;
+  background:var(--bg);
+  color:var(--primary);
 }
 
-/* ===== NAVBAR ===== */
+/* NAV */
 nav{
-    position:fixed;
-    width:100%;
-    padding:18px 40px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    backdrop-filter:blur(12px);
-    background:rgba(0,0,0,0.4);
-    border-bottom:1px solid #111;
-    z-index:1000;
+  position:fixed;
+  width:100%;
+  padding:20px 60px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  backdrop-filter:blur(12px);
+  background:rgba(0,0,0,0.7);
+  border-bottom:1px solid var(--border);
+  z-index:1000;
 }
 
-nav h1{
-    font-size:1.2rem;
-    font-weight:600;
-    background:linear-gradient(90deg,#fff,var(--primary));
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+.logo{
+  font-weight:600;
+  letter-spacing:1px;
 }
 
 nav a{
-    color:#aaa;
-    text-decoration:none;
-    margin-left:25px;
-    font-size:.9rem;
-    transition:.3s;
+  color:var(--muted);
+  text-decoration:none;
+  margin-left:30px;
+  font-size:.9rem;
+  transition:.3s;
 }
 
 nav a:hover{
-    color:#fff;
+  color:#fff;
 }
 
-/* ===== HERO ===== */
+/* HERO */
 header{
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:0 20px;
-    background:radial-gradient(circle at top, rgba(124,58,237,0.2), transparent 60%);
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:0 20px;
 }
 
-header h2{
-    font-size:3rem;
-    font-weight:600;
-    margin-bottom:20px;
-    background:linear-gradient(90deg,#fff,var(--secondary));
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+header h1{
+  font-size:3rem;
+  font-weight:700;
+  margin-bottom:20px;
 }
 
 header p{
-    color:#aaa;
-    max-width:600px;
+  max-width:600px;
+  color:var(--muted);
 }
 
 .btn{
-    margin-top:35px;
-    padding:14px 32px;
-    border-radius:50px;
-    text-decoration:none;
-    font-weight:500;
-    background:linear-gradient(90deg,var(--primary),var(--secondary));
-    box-shadow:0 0 20px rgba(124,58,237,0.4);
-    transition:.3s;
-    color:#fff;
+  margin-top:40px;
+  padding:14px 36px;
+  border-radius:40px;
+  background:#fff;
+  color:#000;
+  text-decoration:none;
+  font-weight:600;
+  transition:.3s;
 }
 
 .btn:hover{
-    transform:translateY(-3px);
-    box-shadow:0 0 30px rgba(124,58,237,0.6);
+  background:#ddd;
 }
 
-/* ===== SECTION ===== */
+/* MINI STATS */
+.mini-stats{
+  margin-top:40px;
+  display:flex;
+  gap:40px;
+  flex-wrap:wrap;
+  justify-content:center;
+  color:var(--muted);
+  font-size:.9rem;
+}
+
+/* SECTION */
 section{
-    padding:120px 40px;
-    max-width:1200px;
-    margin:auto;
+  padding:120px 60px;
+  max-width:1200px;
+  margin:auto;
 }
 
-section h3{
-    text-align:center;
-    font-size:2rem;
-    margin-bottom:70px;
-    background:linear-gradient(90deg,#fff,var(--accent));
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+.section-title{
+  text-align:center;
+  font-size:2rem;
+  margin-bottom:70px;
 }
 
-/* ===== PRODUCT GRID ===== */
+/* GRID */
 .grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:40px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:40px;
 }
 
 .card{
-    background:var(--card);
-    padding:50px;
-    border-radius:20px;
-    border:1px solid #1a1a1a;
-    transition:.4s;
-    text-align:center;
-    position:relative;
-    overflow:hidden;
-}
-
-.card::before{
-    content:"";
-    position:absolute;
-    width:200%;
-    height:200%;
-    background:radial-gradient(circle,var(--primary),transparent 60%);
-    opacity:0;
-    transition:.5s;
-}
-
-.card:hover::before{
-    opacity:0.07;
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:50px 40px;
+  border-radius:16px;
+  transition:.3s;
 }
 
 .card:hover{
-    transform:translateY(-10px);
-    border-color:var(--primary);
-    box-shadow:0 0 30px rgba(124,58,237,0.2);
+  border-color:#333;
+  transform:translateY(-5px);
 }
 
-.card h4{
-    margin-bottom:15px;
+.card h3{
+  margin-bottom:15px;
 }
 
 .price{
-    color:var(--secondary);
-    font-weight:600;
-    margin-bottom:15px;
+  color:#fff;
+  font-weight:600;
+  margin-bottom:15px;
 }
 
-/* ===== STATS ===== */
-.stats{
-    text-align:center;
-    padding:80px;
-    background:linear-gradient(145deg,#0a0a0a,#111);
-    border-radius:20px;
-    border:1px solid #1a1a1a;
+.card p{
+  color:var(--muted);
+  font-size:.9rem;
 }
 
-.counter{
-    font-size:3rem;
-    font-weight:700;
-    background:linear-gradient(90deg,var(--secondary),var(--accent));
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+/* TRUST */
+.trust{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:30px;
+  text-align:center;
 }
 
-/* ===== REVIEW ===== */
-.review-card{
-    background:var(--card);
-    padding:40px;
-    border-radius:16px;
-    border:1px solid #1a1a1a;
-    text-align:center;
-    transition:.3s;
+.trust-box{
+  padding:30px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
 }
 
-.review-card:hover{
-    border-color:var(--accent);
+.trust-box h4{
+  margin-bottom:10px;
 }
 
-.stars{
-    color:#facc15;
-    margin-bottom:10px;
+/* FAQ */
+.faq-item{
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:25px;
+  margin-bottom:20px;
+  border-radius:12px;
 }
 
-/* ===== FOOTER ===== */
+.faq-item h4{
+  margin-bottom:10px;
+}
+
+/* FOOTER */
 footer{
-    padding:60px;
-    text-align:center;
-    border-top:1px solid #111;
-    color:#666;
+  padding:60px;
+  text-align:center;
+  color:var(--muted);
+  border-top:1px solid var(--border);
 }
 
-/* ===== ANIMATION ===== */
-.fade{
-    opacity:0;
-    transform:translateY(40px);
-    transition:1s;
-}
-
-.fade.show{
-    opacity:1;
-    transform:translateY(0);
+@media(max-width:768px){
+  nav{padding:20px;}
+  section{padding:100px 20px;}
+  header h1{font-size:2.2rem;}
 }
 </style>
 </head>
@@ -232,96 +208,86 @@ footer{
 <body>
 
 <nav>
-    <h1>Baskara Store</h1>
-    <div>
-        <a href="#produk">Produk</a>
-        <a href="#review">Review</a>
-        <a href="https://discord.gg/vuNdgndwrN" target="_blank">Order</a>
-    </div>
+  <div class="logo">BASKARA STORE</div>
+  <div>
+    <a href="#produk">Produk</a>
+    <a href="#faq">FAQ</a>
+    <a href="https://discord.gg/vuNdgndwrN" target="_blank">Order</a>
+  </div>
 </nav>
 
 <header>
-    <h2>Premium Digital Product</h2>
-    <p>Menyediakan Redeem Code Redfinger dan kebutuhan Roblox dengan pelayanan cepat, aman, dan terpercaya.</p>
-    <a href="#produk" class="btn">Lihat Produk</a>
+  <h1>Premium Digital Marketplace</h1>
+  <p>Trusted global digital store for Redfinger redeem code and Roblox needs. Fast response, secure payment, and reliable service.</p>
+  <a href="https://discord.gg/vuNdgndwrN" target="_blank" class="btn">Order Now</a>
+
+  <div class="mini-stats">
+    <div>⭐ 4.9 / 5 Rating</div>
+    <div>🛒 30.000+ Sold</div>
+    <div>🌍 Global Market</div>
+  </div>
 </header>
 
 <section id="produk">
-    <h3>Produk Kami</h3>
-    <div class="grid fade">
-        <div class="card">
-            <h4>REDFINGER</h4>
-            <div class="price">Mulai Rp15.100</div>
-            <p>Redeem code all server & Android.</p>
-        </div>
-        <div class="card">
-            <h4>Kebutuhan ROBLOX</h4>
-            <p>Produk unggulan dengan pelayanan cepat dan terpercaya.</p>
-        </div>
+  <div class="section-title">Our Products</div>
+  <div class="grid">
+    <div class="card">
+      <h3>Redfinger</h3>
+      <div class="price">Start from Rp15.100</div>
+      <p>Redeem code for all server & Android. Fast process & secure.</p>
     </div>
+    <div class="card">
+      <h3>Roblox Services</h3>
+      <p>Gamepass, Robux needs & other digital services.</p>
+    </div>
+  </div>
 </section>
 
 <section>
-    <div class="stats fade">
-        <div class="counter" id="counter">0</div>
-        <p style="color:#888">Total produk terjual</p>
+  <div class="section-title">Why Choose Us</div>
+  <div class="trust">
+    <div class="trust-box">
+      <h4>Fast Response</h4>
+      <p>Quick admin support via Discord.</p>
     </div>
+    <div class="trust-box">
+      <h4>Secure Payment</h4>
+      <p>QRIS, Bank Transfer & other global payment methods.</p>
+    </div>
+    <div class="trust-box">
+      <h4>Trusted Seller</h4>
+      <p>4.9/5 rating from satisfied customers.</p>
+    </div>
+    <div class="trust-box">
+      <h4>Global Market</h4>
+      <p>Serving customers worldwide.</p>
+    </div>
+  </div>
 </section>
 
-<section id="review">
-    <h3>Customer Reviews</h3>
-    <div class="grid fade">
-        <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <p><strong>Andi</strong></p>
-            <p>Recommended banget!</p>
-        </div>
-        <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <p><strong>Sinta</strong></p>
-            <p>Murah & cepat.</p>
-        </div>
-        <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <p><strong>Agi</strong></p>
-            <p>Pelayanan ramah.</p>
-        </div>
-    </div>
+<section id="faq">
+  <div class="section-title">Frequently Asked Questions</div>
+
+  <div class="faq-item">
+    <h4>How do I order?</h4>
+    <p>Click "Order Now" and join our Discord server to contact admin.</p>
+  </div>
+
+  <div class="faq-item">
+    <h4>What payment methods are available?</h4>
+    <p>We support QRIS (all payment), Bank Transfer and other available methods.</p>
+  </div>
+
+  <div class="faq-item">
+    <h4>Is this safe?</h4>
+    <p>Yes. We have served 30.000+ customers with 4.9/5 rating.</p>
+  </div>
+
 </section>
 
 <footer>
-    © 2026 BaskaraStore. All Rights Reserved.
+  © 2026 Baskara Store. All Rights Reserved.
 </footer>
-
-<script>
-/* Fade Animation */
-const faders = document.querySelectorAll('.fade');
-window.addEventListener('scroll',()=>{
-    faders.forEach(el=>{
-        const top = el.getBoundingClientRect().top;
-        if(top < window.innerHeight - 100){
-            el.classList.add('show');
-        }
-    });
-});
-
-/* Counter Animation */
-let count = 0;
-const target = 30000;
-const counter = document.getElementById("counter");
-
-const updateCounter = () => {
-    count += 300;
-    if(count < target){
-        counter.innerText = count.toLocaleString()+"+";
-        requestAnimationFrame(updateCounter);
-    } else {
-        counter.innerText = target.toLocaleString()+"+";
-    }
-};
-
-updateCounter();
-</script>
 
 </body>
 </html>
