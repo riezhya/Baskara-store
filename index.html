@@ -1,219 +1,327 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BaskaraStore - menyediakan kebutuhan roblox</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baskara Store - Premium Digital Store</title>
 
-        body {
-            background: #000;
-            color: #fff;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-        header {
-            padding: 90px 20px;
-            text-align: center;
-            border-bottom: 1px solid #111;
-            background: radial-gradient(circle at top, rgba(124,58,237,0.08), transparent 65%);
-        }
+<style>
+:root{
+    --primary:#7c3aed;
+    --secondary:#a855f7;
+    --accent:#93c5fd;
+    --dark:#000;
+    --card:#0f0f0f;
+}
 
-        header h1 {
-            font-size: 2.6rem;
-            font-weight: 500;
-            margin-bottom: 15px;
-            background: linear-gradient(90deg, #ffffff, #c084fc);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
 
-        header p {
-            color: #aaa;
-            font-size: 1rem;
-        }
+body{
+    background:#000;
+    color:#fff;
+    overflow-x:hidden;
+}
 
-        .btn {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 12px 28px;
-            background: linear-gradient(90deg, #7c3aed, #a855f7);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 500;
-            transition: 0.3s ease;
-            box-shadow: 0 0 12px rgba(168,85,247,0.25);
-        }
+/* ===== NAVBAR ===== */
+nav{
+    position:fixed;
+    width:100%;
+    padding:18px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    backdrop-filter:blur(12px);
+    background:rgba(0,0,0,0.4);
+    border-bottom:1px solid #111;
+    z-index:1000;
+}
 
-        .btn:hover {
-            box-shadow: 0 0 18px rgba(168,85,247,0.35);
-        }
+nav h1{
+    font-size:1.2rem;
+    font-weight:600;
+    background:linear-gradient(90deg,#fff,var(--primary));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
 
-        section {
-            padding: 90px 20px;
-            max-width: 1000px;
-            margin: auto;
-        }
+nav a{
+    color:#aaa;
+    text-decoration:none;
+    margin-left:25px;
+    font-size:.9rem;
+    transition:.3s;
+}
 
-        h2 {
-            text-align: center;
-            margin-bottom: 60px;
-            font-size: 1.8rem;
-            font-weight: 500;
-            background: linear-gradient(90deg, #ffffff, #93c5fd);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+nav a:hover{
+    color:#fff;
+}
 
-        .products, .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 35px;
-        }
+/* ===== HERO ===== */
+header{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:0 20px;
+    background:radial-gradient(circle at top, rgba(124,58,237,0.2), transparent 60%);
+}
 
-        .card-link { text-decoration: none; color: inherit; }
+header h2{
+    font-size:3rem;
+    font-weight:600;
+    margin-bottom:20px;
+    background:linear-gradient(90deg,#fff,var(--secondary));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
 
-        .card {
-            background: linear-gradient(145deg, #0a0a0a, #111);
-            padding: 40px;
-            border-radius: 14px;
-            border: 1px solid #1a1a1a;
-            transition: 0.3s ease;
-            text-align: center;
-        }
+header p{
+    color:#aaa;
+    max-width:600px;
+}
 
-        .card:hover {
-            border-color: #7c3aed;
-            box-shadow: 0 0 15px rgba(124,58,237,0.15);
-        }
+.btn{
+    margin-top:35px;
+    padding:14px 32px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:500;
+    background:linear-gradient(90deg,var(--primary),var(--secondary));
+    box-shadow:0 0 20px rgba(124,58,237,0.4);
+    transition:.3s;
+    color:#fff;
+}
 
-        .card h3 {
-            margin-bottom: 15px;
-            font-weight: 500;
-        }
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 30px rgba(124,58,237,0.6);
+}
 
-        .price {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: #c084fc;
-        }
+/* ===== SECTION ===== */
+section{
+    padding:120px 40px;
+    max-width:1200px;
+    margin:auto;
+}
 
-        .discord-note {
-            font-size: 0.85rem;
-            color: #93c5fd;
-            margin-top: 15px;
-        }
+section h3{
+    text-align:center;
+    font-size:2rem;
+    margin-bottom:70px;
+    background:linear-gradient(90deg,#fff,var(--accent));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
 
-        .stats-box {
-            background: linear-gradient(145deg, #0a0a0a, #111);
-            padding: 60px;
-            border-radius: 14px;
-            border: 1px solid #1a1a1a;
-            text-align: center;
-            box-shadow: 0 0 20px rgba(147,197,253,0.08);
-        }
+/* ===== PRODUCT GRID ===== */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:40px;
+}
 
-        .stats-number {
-            font-size: 2.8rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-            background: linear-gradient(90deg, #c084fc, #93c5fd);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+.card{
+    background:var(--card);
+    padding:50px;
+    border-radius:20px;
+    border:1px solid #1a1a1a;
+    transition:.4s;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+}
 
-        .stars {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: #facc15;
-        }
+.card::before{
+    content:"";
+    position:absolute;
+    width:200%;
+    height:200%;
+    background:radial-gradient(circle,var(--primary),transparent 60%);
+    opacity:0;
+    transition:.5s;
+}
 
-        .testimonial-grid .card p {
-            color: #bbb;
-            font-size: 0.9rem;
-        }
+.card:hover::before{
+    opacity:0.07;
+}
 
-        footer {
-            text-align: center;
-            padding: 60px 20px;
-            border-top: 1px solid #111;
-            color: #666;
-            font-size: 0.9rem;
-            background: radial-gradient(circle at bottom, rgba(168,85,247,0.08), transparent 65%);
-        }
+.card:hover{
+    transform:translateY(-10px);
+    border-color:var(--primary);
+    box-shadow:0 0 30px rgba(124,58,237,0.2);
+}
 
-        @media (max-width: 600px) {
-            header h1 { font-size: 2rem; }
-        }
-    </style>
+.card h4{
+    margin-bottom:15px;
+}
+
+.price{
+    color:var(--secondary);
+    font-weight:600;
+    margin-bottom:15px;
+}
+
+/* ===== STATS ===== */
+.stats{
+    text-align:center;
+    padding:80px;
+    background:linear-gradient(145deg,#0a0a0a,#111);
+    border-radius:20px;
+    border:1px solid #1a1a1a;
+}
+
+.counter{
+    font-size:3rem;
+    font-weight:700;
+    background:linear-gradient(90deg,var(--secondary),var(--accent));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* ===== REVIEW ===== */
+.review-card{
+    background:var(--card);
+    padding:40px;
+    border-radius:16px;
+    border:1px solid #1a1a1a;
+    text-align:center;
+    transition:.3s;
+}
+
+.review-card:hover{
+    border-color:var(--accent);
+}
+
+.stars{
+    color:#facc15;
+    margin-bottom:10px;
+}
+
+/* ===== FOOTER ===== */
+footer{
+    padding:60px;
+    text-align:center;
+    border-top:1px solid #111;
+    color:#666;
+}
+
+/* ===== ANIMATION ===== */
+.fade{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s;
+}
+
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
+</style>
 </head>
+
 <body>
 
-<header>
+<nav>
     <h1>Baskara Store</h1>
-    <p>Menyediakan Redeem code Redfinger dan Kebutuhan ROBLOX lainya.</p>
+    <div>
+        <a href="#produk">Produk</a>
+        <a href="#review">Review</a>
+        <a href="https://discord.gg/vuNdgndwrN" target="_blank">Order</a>
+    </div>
+</nav>
+
+<header>
+    <h2>Premium Digital Product</h2>
+    <p>Menyediakan Redeem Code Redfinger dan kebutuhan Roblox dengan pelayanan cepat, aman, dan terpercaya.</p>
     <a href="#produk" class="btn">Lihat Produk</a>
 </header>
 
 <section id="produk">
-    <h2>Produk</h2>
-    <div class="products">
-
-        <a href="https://discord.gg/vuNdgndwrN" target="_blank" class="card-link">
-            <div class="card">
-                <h3>REDFINGER</h3>
-                <p class="price">Harga Mulai Rp.15.100</p>
-                <p>REDFINGER VIA KODE REDEEM ALL SERVER DAN ANDROID.</p>
-                <p class="discord-note">Klik untuk Order via Discord</p>
-            </div>
-        </a>
-
-        <a href="https://discord.gg/vuNdgndwrN" target="_blank" class="card-link">
-            <div class="card">
-                <h3>KEBUTUHAN ROBLOX</h3>               
-                <p>Produk unggulan dengan pelayanan cepat.</p>
-                <p class="discord-note">Klik untuk Order via Discord</p>
-            </div>
-        </a>
-
-    </div>
-</section>
-
-<section>
-    <h2>Total Terjual</h2>
-    <div class="stats-box">
-        <div class="stats-number">30.000+</div>
-        <p style="color:#888;">Total produk yang sudah terjual</p>
-    </div>
-</section>
-
-<section>
-    <h2>Customer Reviews</h2>
-    <div class="testimonial-grid">
+    <h3>Produk Kami</h3>
+    <div class="grid fade">
         <div class="card">
+            <h4>REDFINGER</h4>
+            <div class="price">Mulai Rp15.100</div>
+            <p>Redeem code all server & Android.</p>
+        </div>
+        <div class="card">
+            <h4>Kebutuhan ROBLOX</h4>
+            <p>Produk unggulan dengan pelayanan cepat dan terpercaya.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="stats fade">
+        <div class="counter" id="counter">0</div>
+        <p style="color:#888">Total produk terjual</p>
+    </div>
+</section>
+
+<section id="review">
+    <h3>Customer Reviews</h3>
+    <div class="grid fade">
+        <div class="review-card">
             <div class="stars">★★★★★</div>
             <p><strong>Andi</strong></p>
-            <p>Recommended!</p>
+            <p>Recommended banget!</p>
         </div>
-        <div class="card">
+        <div class="review-card">
             <div class="stars">★★★★★</div>
             <p><strong>Sinta</strong></p>
-            <p>Murah banget.</p>
+            <p>Murah & cepat.</p>
         </div>
-        <div class="card">
+        <div class="review-card">
             <div class="stars">★★★★★</div>
             <p><strong>Agi</strong></p>
-            <p>Pelayanan Cepat dan Ramah.</p>
+            <p>Pelayanan ramah.</p>
         </div>
     </div>
 </section>
 
 <footer>
-    <p>© 2026 BaskaraStore. All rights reserved.</p>
+    © 2026 BaskaraStore. All Rights Reserved.
 </footer>
+
+<script>
+/* Fade Animation */
+const faders = document.querySelectorAll('.fade');
+window.addEventListener('scroll',()=>{
+    faders.forEach(el=>{
+        const top = el.getBoundingClientRect().top;
+        if(top < window.innerHeight - 100){
+            el.classList.add('show');
+        }
+    });
+});
+
+/* Counter Animation */
+let count = 0;
+const target = 30000;
+const counter = document.getElementById("counter");
+
+const updateCounter = () => {
+    count += 300;
+    if(count < target){
+        counter.innerText = count.toLocaleString()+"+";
+        requestAnimationFrame(updateCounter);
+    } else {
+        counter.innerText = target.toLocaleString()+"+";
+    }
+};
+
+updateCounter();
+</script>
 
 </body>
 </html>
